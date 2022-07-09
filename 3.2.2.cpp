@@ -6,7 +6,8 @@ struct Bank
     string name;
     double money;
 };
-void bank(Bank &u,double new_money) {
+void bank(Bank &u) {
+    double new_money;
     cout << "Введите номер счёта: ";
     cin >> u.account;
     cout << "Введите имя владельца: ";
@@ -20,8 +21,7 @@ void bank(Bank &u,double new_money) {
 int main()
 {
     setlocale(LC_ALL, "rus");
-    Bank man;
-    double new_money = 0;  
-    bank(man, new_money);
+    Bank man;  
+    bank(man);
     return 0;
 }
