@@ -2,12 +2,11 @@
 using namespace std;
 struct Bank
 {
-    int account;
+    int account=0;
     string name;
-    double money;
+    double money=0;
 };
-void bank(Bank &u) {
-    double new_money;
+void bank(Bank &u,double new_money) {
     cout << "Введите номер счёта: ";
     cin >> u.account;
     cout << "Введите имя владельца: ";
@@ -16,12 +15,14 @@ void bank(Bank &u) {
     cin >> u.money;
     cout << "Введите новый баланс: ";
     cin >> new_money;
-    cout <<"Ваш счёт: " << u.name << ", " << u.account << ", " << new_money<<endl;
+    u.money = new_money;
 }
 int main()
 {
     setlocale(LC_ALL, "rus");
     Bank man;  
-    bank(man);
+    
+    bank(man,1);
+    cout << "Ваш счёт: " << man.name << ", " << man.account << ", " << man.money << endl;
     return 0;
 }
